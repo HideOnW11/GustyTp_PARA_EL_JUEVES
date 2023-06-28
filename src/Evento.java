@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Evento {
-    private String nombre;
-    private String fecha;
-    private String lugar;
-    private double precio;
-    private List<Integer> entradas;
+    public String nombre;
+    public String fecha;
+    public String lugar;
+    public double precio;
+    public List<Integer> entradas;
 
     public Evento(String nombre, String fecha, String lugar, double precio, int cantidadEntradas) {
         this.nombre = nombre;
