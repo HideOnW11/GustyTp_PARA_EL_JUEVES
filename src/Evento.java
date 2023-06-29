@@ -5,7 +5,7 @@ public class Evento {
     public String fecha;             // Fecha del evento
     public String hora;              // Hora del evento
     public String lugar;             // Lugar del evento
-    public String tdp;     // partido a ocurrir
+    public String tdp;               // partido a ocurrir
     public List<Entrada> entradas;   // Lista de entradas disponibles para el evento
 
     public Evento(String fecha, String hora, String lugar, String tdp) {

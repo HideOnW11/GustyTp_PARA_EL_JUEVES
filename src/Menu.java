@@ -11,9 +11,6 @@ public class Menu {
         this.scanner = new Scanner(System.in);
         this.compraEntradas = new CompraEntradas(evento);
     }
-    /**
-     * 
-     */
     public void mostrarMenu() {
         String opcion;
 
@@ -71,7 +68,7 @@ public class Menu {
                     
                         }
                         else {
-                            System.out.println("Clave incorrecta. Acceso denegado.");
+                            System.out.println("Clave incorrecta. Acceso denegado");
                             System.out.println("Para continuar apretar la tecla enter...");
                             scanner.nextLine(); 
                             }

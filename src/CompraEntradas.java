@@ -34,12 +34,12 @@ public class CompraEntradas {
             if (entradaComprada != null) {
                 ConsoleUtils.clearConsole();
                 System.out.println("¡Compra realizada con éxito!");
-                System.out.println("Datos de la entrada:");
+                System.out.println("Comprobante:");
+                System.out.println("Datos del Evento: " +evento.tdp+" (Amistoso) " +evento.lugar+" Fecha: "+evento.fecha+" Horario: "+evento.hora+("hs."));
                 System.out.println("Número de entrada: " + entradaComprada.getNumero());
                 System.out.println("Ubicación: " + entradaComprada.getUbicacion());
                 System.out.println("Precio: " + entradaComprada.getPrecio());
                 System.out.println("Nombre del comprador: " + entradaComprada.getNombreComprador());
-                System.out.println("Datos del Evento: " +evento.tdp+" (Amistoso) " +evento.lugar+" Fecha: "+evento.fecha+" Horario: "+evento.hora+("hs."));
                 System.out.println("Correo electrónico del comprador: " + entradaComprada.getCorreoComprador());
                 System.out.println("Número de teléfono del comprador: " + entradaComprada.getTelefonoComprador());
                 System.out.println("Para continuar apretar la tecla enter...");
@@ -96,6 +96,8 @@ public class CompraEntradas {
                 validInput = true;
             } catch (InputMismatchException e) {
                 System.out.println("Error: Ingrese un número de teléfono válido ");
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Ingrese un número de teléfono válido");
             }
         }
         return numeroTelefono;
