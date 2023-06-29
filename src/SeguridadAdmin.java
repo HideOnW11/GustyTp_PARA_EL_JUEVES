@@ -9,7 +9,7 @@ static Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         
         // Verificar si la contraseña es correcta
-        if (input.equals("bare")) {
+        if (input.equals("Bandeja123")) {
             return true; // Contraseña correcta
         } 
         else {
