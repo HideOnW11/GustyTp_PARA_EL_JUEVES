@@ -5,7 +5,7 @@ public class Entrada {
     public boolean ocupada;              // Indicador de si la entrada está ocupada o no
     public String nombreComprador;       // Nombre del comprador de la entrada
     public String correoComprador;       // Correo electrónico del comprador de la entrada
-    public int telefonoComprador;     // Número de teléfono del comprador de la entrada
+    public long telefonoComprador;     // Número de teléfono del comprador de la entrada
 
     public Entrada(int numero, String ubicacion, double precio) {
         this.numero = numero;
@@ -14,7 +14,7 @@ public class Entrada {
         this.ocupada = false;           // Inicialmente la entrada no está ocupada
         this.nombreComprador = "";      // Inicialmente no se ha asignado un nombre de comprador
         this.correoComprador = "";      // Inicialmente no se ha asignado un correo electrónico de comprador
-        this.telefonoComprador = numero;    // Inicialmente no se ha asignado un número de teléfono de comprador
+        this.telefonoComprador = 0;    // Inicialmente no se ha asignado un número de teléfono de comprador
     }
 
     public int getNumero() {
@@ -53,11 +53,11 @@ public class Entrada {
         this.correoComprador = correoComprador;
     }
 
-    public int getTelefonoComprador() {
+    public long getTelefonoComprador() {
         return telefonoComprador;
     }
 
-    public void setTelefonoComprador(int numeroTelefono) {
-        this.telefonoComprador = numeroTelefono;
+    public void setTelefonoComprador(long telefonoComprador) {
+        this.telefonoComprador = telefonoComprador;
     }
 }

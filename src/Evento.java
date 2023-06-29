@@ -38,13 +38,13 @@ public class Evento {
         return ocupadas;
     }
 
-    public Entrada comprarEntrada(int numeroEntrada, String nombreComprador, String correoComprador, int numeroTelefono) {
+    public Entrada comprarEntrada(int numeroEntrada, String nombreComprador, String correoComprador, long telefonoComprador) {
         for (Entrada entrada : entradas) {
             if (entrada.getNumero() == numeroEntrada && !entrada.isOcupada()) {
                 entrada.setOcupada(true);
                 entrada.setNombreComprador(nombreComprador);
                 entrada.setCorreoComprador(correoComprador);
-                entrada.setTelefonoComprador(numeroTelefono);
+                entrada.setTelefonoComprador(telefonoComprador);
                 return entrada;   // Devolver la entrada comprada
             }
         }

@@ -6,15 +6,16 @@ public class Menu {
     public Scanner scanner;
     public CompraEntradas compraEntradas;
     public ConsoleUtils clear;
-    
     public Menu(Evento evento) {
         this.evento = evento;
         this.scanner = new Scanner(System.in);
         this.compraEntradas = new CompraEntradas(evento);
     }
-
+    /**
+     * 
+     */
     public void mostrarMenu() {
-        int opcion;
+        String opcion;
 
         do {
             ConsoleUtils.clearConsole();
@@ -24,28 +25,60 @@ public class Menu {
             System.out.println("3. Comprar entrada");
             System.out.println("4. Salir");
             System.out.print("Seleccione una opción: ");
-            opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el salto de línea
-            ConsoleUtils.clearConsole();
+            opcion = scanner.nextLine();
+            //scanner.nextLine(); // Limpiar el salto de línea
+            
             switch (opcion) {
-                case 1:
+                case "1":
+                    ConsoleUtils.clearConsole();
                     List<Entrada> disponibles = evento.getEntradasDisponibles();
                     System.out.println("Entradas disponibles:");
                     for (Entrada entrada : disponibles) {
-                        System.out.println(entrada.getNumero() + " - " + entrada.getUbicacion());
+                        System.out.println(entrada.getNumero() + " - " + entrada.getUbicacion()+" - $"+ entrada.getPrecio());
                     }
+                    System.out.println("Para continuar apretar la tecla enter...");
+                    scanner.nextLine(); 
                     break;
-                case 2:
-                    List<Entrada> ocupadas = evento.getEntradasOcupadas();
-                    System.out.println("Entradas ocupadas:");
-                    for (Entrada entrada : ocupadas) {
-                        System.out.println(entrada.getNumero() + " - " + entrada.getUbicacion());
-                    }
-                    break;
-                case 3:
+                case "2":
+                    ConsoleUtils.clearConsole();
+                    boolean claveCorrecta = SeguridadAdmin.requestPassword();
+                     
+                        if (claveCorrecta) {
+                            System.out.println("Clave correcta. Acceso concedido.");
+                                // Resto del código para el acceso autorizado
+                            List<Entrada> ocupadas = evento.getEntradasOcupadas();
+                            System.out.println("Entradas ocupadas:");
+                            int cantidad_de_entradas_ocupadas = ocupadas.size();
+                            if(cantidad_de_entradas_ocupadas != 0){
+                            System.out.println("No se vendio ninguna entrada");
+                            System.out.println("Para continuar apretar la tecla enter...");
+                            scanner.nextLine(); 
+                            scanner.nextLine(); 
+                            }
+                            else{
+                                System.out.println("Se vendieron un total de : " + cantidad_de_entradas_ocupadas + " entradas");
+                                for (Entrada entrada : ocupadas) {
+                                System.out.println(entrada.getNumero() + " - " + entrada.getUbicacion());
+                                }
+                                System.out.println("Para continuar apretar la tecla enter...");
+                                scanner.nextLine(); 
+                                scanner.nextLine(); 
+                            }
+                    
+                        }
+                        else {
+                            System.out.println("Clave incorrecta. Acceso denegado.");
+                            System.out.println("Para continuar apretar la tecla enter...");
+                            scanner.nextLine(); 
+                            scanner.nextLine(); 
+                            }
+                       break;
+                case "3":
+                    ConsoleUtils.clearConsole();
                     compraEntradas.realizarCompra();
                     break;
-                case 4:
+                case "4":
+                    ConsoleUtils.clearConsole();
                     System.out.println("¡Hasta luego!");
                     break;
                 default:
@@ -54,7 +87,7 @@ public class Menu {
             }
 
             System.out.println();
-        } while (opcion != 4);
+        } while (!opcion.equals("4"));
     }
 
 }
