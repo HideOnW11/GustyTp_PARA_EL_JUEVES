@@ -33,11 +33,17 @@ public class Menu {
                     ConsoleUtils.clearConsole();
                     List<Entrada> disponibles = evento.getEntradasDisponibles();
                     System.out.println("Entradas disponibles:");
+                    if(disponibles.size()!=0){
                     for (Entrada entrada : disponibles) {
                         System.out.println(entrada.getNumero() + " - " + entrada.getUbicacion()+" - $"+ entrada.getPrecio());
                     }
                     System.out.println("Para continuar apretar la tecla enter...");
-                    scanner.nextLine(); 
+                    scanner.nextLine(); }
+                    else{
+                        System.out.println("Las entradas estan agotadas");
+                        System.out.println("Para continuar apretar la tecla enter...");
+                        scanner.nextLine(); 
+                    }
                     break;
                 case "2":
                     ConsoleUtils.clearConsole();

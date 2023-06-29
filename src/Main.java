@@ -6,7 +6,7 @@ public class Main {
         // Crear un nuevo evento
         Evento evento = new Evento("2023-07-01", "20:00", "Estadio: Monumental", "Argentina-Ecuador");
         // Agregar entradas al evento
-        evento.agregarEntrada(new Entrada(1, "Platea Alta - Asiento 1", 50.0));
+/*         evento.agregarEntrada(new Entrada(1, "Platea Alta - Asiento 1", 50.0));
         evento.agregarEntrada(new Entrada(2, "Platea Alta - Asiento 2", 50.0));
         evento.agregarEntrada(new Entrada(3, "Platea Alta - Asiento 3", 50.0));
         evento.agregarEntrada(new Entrada(4, "Platea Alta - Asiento 4", 50.0));
@@ -17,7 +17,7 @@ public class Main {
         evento.agregarEntrada(new Entrada(9, "Platea Baja - Asiento 3", 100.0));
         evento.agregarEntrada(new Entrada(10, "Platea Baja - Asiento 4", 100.0));
         evento.agregarEntrada(new Entrada(11, "Platea Baja - Asiento 5", 100.0));
-        evento.agregarEntrada(new Entrada(12, "Platea Baja - Asiento 6", 100.0));
+        evento.agregarEntrada(new Entrada(12, "Platea Baja - Asiento 6", 100.0)); */
     
         
         // Crear el menú y mostrarlo

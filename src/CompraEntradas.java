@@ -18,8 +18,10 @@ public class CompraEntradas {
         long numeroTelefono = obtenerNumeroTelefono(); // Obtiene el número de teléfono del comprador
 
         List<Entrada> entradasDisponibles = evento.getEntradasDisponibles(); // Obtiene la lista de entradas disponibles del evento
-        if (entradasDisponibles.isEmpty()) {
+        if (entradasDisponibles.size()==0) {
             System.out.println("Lo sentimos, no hay entradas disponibles.");
+            System.out.println("Para continuar apretar la tecla enter...");
+            scanner.nextLine();
         } else {
             System.out.println("Entradas disponibles:");
             for (Entrada entrada : entradasDisponibles) {
